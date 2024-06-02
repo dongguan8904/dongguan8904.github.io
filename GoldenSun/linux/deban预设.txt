@@ -1,0 +1,41 @@
+將一般使用者加入sudo
+su
+nano /etc/sudoers
+root    ALL=(ALL:ALL) ALL
+user    ALL=(ALL:AAL) ALL
+
+
+sudo nano /etc/apt/sources.list
+
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
+
+
+安装UFW
+sudo apt install ufw
+sudo ufw enable
+设定预设规则，允许所有连外，封锁所有连入，只允许SSH
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw reload
+
+sudo nano /etc/systemd/system.conf
+DefaultTimeoutStartSec=10s
+DefaultTimeoutStopSec=10s
+
+
+https://update.glados-config.com/clash/452170/8886cea/111899/glados.yaml
+https://v1.v2ai.top/link/Yy68F0KyCi2Ohzo39Y4jtZNup6MARmbTVLwe?clash=1
+
+

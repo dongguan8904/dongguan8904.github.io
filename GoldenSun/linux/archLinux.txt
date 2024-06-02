@@ -1,0 +1,102 @@
+更新系统
+pacman -Syu
+
+
+输入法安装
+sudo pacman -S fictx5-im
+sudo pacman -S fictx5-chinexe-addons
+配置输入法
+sudo nano /etc/environment
+写入配置
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+重启电脑
+
+
+ufw防火墙安装与开启
+sudo systemctl start ufw
+sudo systemctl enable ufw
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw reload
+
+
+使用firewall-cmd命令行工具来查看Firewalld的状态。
+- 查看防火墙状态：
+sudo firewall-cmd --state
+running表示防火墙正在运行，not running表示防火墙未运行。
+- 查看所有防火墙规则：
+sudo firewall-cmd --list-all
+这会显示当前配置的所有防火墙规则，包括允许的服务、端口等信息。
+- 查看开放的端口：
+sudo firewall-cmd --list-ports
+这会列出所有已经开放的端口。
+- 查看已加载的服务：
+sudo firewall-cmd --list-services
+这会显示已加载的所有服务。
+- 查看已加载的区域：
+sudo firewall-cmd --get-active-zones
+这会显示已加载的区域和相应的接口。
+
+停止防火墙
+sudo systemctl stop firewalld
+禁止开机启动防火墙
+sudo systemctl disable firewalld
+
+#删除默认ssh
+sudo firewall-cmd --zone=public --remove-service=ssh
+sudo firewall-cmd --zone=public --remove-service=ssh --permanent
+
+在不改变状态的条件下重新加载防火墙：
+sudo firewall-cmd --reload
+
+官方源和镜像源
+/etc/pacman.conf
+是 pacman 的主要配置文件，定义了 pacman 的行为和选项
+/etc/pacman.d/mirrorlist
+是包含可用镜像站点列表的文件，用于选择合适的镜像站点进行软件包下载。两者共同工作，帮助 pacman 在系统更新和软件包管理过程中找到合适的软件包仓库和镜像站点。
+
+清华源使用方法
+Pacman 以 mirrorlist 中 Server 的顺序作为优先级，因此添加镜像需要在文件的最顶端添加；您可以同时注释掉其它所有镜像。
+有关 Arch Linux 使用镜像的详细说明请见官方文档
+编辑 /etc/pacman.d/mirrorlist，在文件的最顶端添加：
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+更新软件包缓存：
+sudo pacman -Syyu
+两次 y 能避免从损坏的镜像切换到正常的镜像时出现的问题。
+如果您从一个较新的镜像切换到较旧的镜像，以下命令可以降级部分包，以避免系统的部分更新。
+sudo pacman -Syyuu
+
+
+卸载
+运行以下命令以卸载 ufw：
+sudo pacman -Rns ufw
+上述命令中：
+    -R 表示卸载软件包。
+    -n 表示不删除依赖的软件包。
+    -s 表示删除软件包时也删除其系统配置文件。
+在卸载完成后，你可以通过运行以下命令来清理不再需要的依赖项：
+sudo pacman -Qdtq | sudo pacman -Rns -
+出现了错误。这可能是因为当前系统上没有需要清理的孤立软件包。
+sudo pacman -Qdtq
+如果上述命令输出为空，说明当前没有需要清理的孤立软件包，因此你可以忽略错误并继续其他操作。如果有输出，你可以考虑执行清理命令。
+
+
+列车软件包
+要列出已经安装的软件包，你可以使用以下 pacman 命令：
+pacman -Q
+这个命令会列出系统上所有已安装的软件包的名称和版本号。
+
+如果你想要输出更详细的信息，你可以使用 -i 选项：
+pacman -Qi
+这会输出每个软件包的详细信息，包括依赖关系、安装日期等。
+
+如果你只想列出显示顶级软件包，而不显示依赖关系，可以使用 -lq 选项：
+pacman -Qlq
+这将只显示软件包的名称，每行一个。
+
+如果你只对特定的软件包感兴趣，你可以通过在命令后添加软件包名称来过滤结果，
+pacman -Q firefox
+这会列出系统上安装的名为 "firefox" 的软件包的信息。

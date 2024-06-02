@@ -1,0 +1,39 @@
+## 系统语言环境全局设置为中文
+1. 打开系统全局默认设置
+```bash
+sudo nano /etc/default/locale
+```
+2. 设定中文语言环境
+```bash
+LANG=zh_CN.UTF-8
+LC_MESSAGES=zh_CN.UTF-8
+```
+3. 更新系统语言环境
+```bash
+sudo update-locale
+```
+4. 重启电脑生效
+```bash
+reboot
+```
+
+## 更新系统
+```bash
+sudo apt update && upgrade
+```
+
+## 中文输入法
+1. 下载fcitx5输入法框架和fcitx5-chinese-addons中文输入法
+```bash
+sudo apt install fcitx5 fcitx5-chinese-addons
+```
+2. 在系统设置->输入法->选择fcitx5为默认输入法
+3. 在fcitx配置里添加pinyin输入法
+4. 在系统设置fcitx5开机启动
+
+## 防火墙gufw
+1. 安装图形界面防火墙
+```bash
+sudo apt install gufw
+```
+2. 打开防火墙，设置忽略传入，允许传出的规则。
