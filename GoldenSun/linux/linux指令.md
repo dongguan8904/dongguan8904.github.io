@@ -1,3 +1,5 @@
+<details markdown='1'><summary>系统信息</summary>
+
 ### 系统信息
 - `date` - 显示当前日期和时间。
 - `cal` - 显示本月的日历。
@@ -20,6 +22,12 @@
 - `hostnamectl` - 显示操作系统版本。
 - `uname -a` - 显示内核架构。
 - `cat /proc/version` - 显示发行版信息。
+
+</details>
+
+---
+
+<details markdown='1'><summary>文件命令</summary>
 
 ### 文件命令
 - `ls -F` - 显示每个条目后面的指示符，斜杠表示文件夹，星号表示可执行文件，@符号表示别名。
@@ -63,6 +71,12 @@
 - `nl` - 显示行号，在使用head和tail命令之前很有用。
 - `|` - 管道，连接两个或多个命令，例如：`grep 关键词 access.log | head -n 5`
 
+</details>
+
+---
+
+<details markdown='1'><summary>文件权限</summary>
+
 ### 文件权限
 `chmod <八进制> <文件>` - 将文件的权限更改为八进制数，可以分别为用户、组和其他用户添加：
 
@@ -71,6 +85,12 @@
 - 1 - 执行（x）
 
 例如，`chmod 777 文件` 表示为文件提供了对所有用户的读取、写入和执行权限。
+
+</details>
+
+---
+
+<details markdown='1'><summary>压缩</summary>
 
 ### 压缩
 - `tar cf <文件.tar> <文件>` - 创建一个名为file.tar的tar文件，其中包含指定的文件。
@@ -88,6 +108,12 @@
 - `unrar x 文件.rar` - 提取带有其原始目录结构的rar文件。
 - `rar a 文件.rar /文件夹/` - 从文件夹创建rar文件。
 
+</details>
+
+---
+
+<details markdown='1'><summary>搜索和查找命令</summary>
+
 ### 搜索和查找命令：
 - `grep <模式> <文件>` - 在文件中搜索模式。 `-A NUM` 或 `--after-context=NUM` 会打印匹配行后的NUM行文本。 `-B NUM` 或 `--before-context=NUM` 会打印匹配行前的NUM行文本。
 - `grep -r <模式> <目录>` - 在目录中递归搜索模式。
@@ -98,6 +124,12 @@
 - `grep 单词 /路径/文件` - 在文件中搜索单词。
 - Midnight Commander有搜索文件和文本的选项。运行mc并按下Alt + Shift +？以打开搜索窗口。
 
+</details>
+
+---
+
+<details markdown='1'><summary>进程管理</summary>
+
 ### 进程管理：
 - `ps` - 显示你的活动进程。
 - `top` - 显示所有运行中的进程。
@@ -106,6 +138,12 @@
 - `killall <进程名>` - 终止所有名称为name的进程。
 - `bg` - 列出/恢复已停止或在后台运行的作业。
 - `fg` - 将最近的作业移到前台。
+
+</details>
+
+---
+
+<details markdown='1'><summary>网络</summary>
 
 ### 网络：
 - `ping <主机>` - 对主机进行ping测试并输出结果。
@@ -120,11 +158,24 @@
 - `sudo lsof -i:22` - 检查特定端口，例如22端口。
 - `sudo nmap -sTU -O IP-地址` - 检查开放的端口。
 
-### SSH：
+</details>
+
+---
+
+<details markdown='1'><summary>SSH远程</summary>
+
+### SSH远程：
 - `ssh user@host -p 8022` - 连接到主机，使用用户名user，在8022端口上。
 - `ssh-copy-id user@host` - 将你的密钥添加到主机的用户，以启用基于密钥的或无密码登录。
 
+</details>
+
+---
+
+<details markdown='1'><summary>安装</summary>
+
 ### 安装
+
 从源代码安装：
 
 ```bash
@@ -150,6 +201,12 @@ RPM系统（使用`.rpm`包）：
 rpm -Uvh <pkg.rpm>  # 安装软件包
 ```
 
+</details>
+
+---
+
+<details markdown='1'><summary>快捷键</summary>
+
 ### 快捷键：
 - `Ctrl+C` - 终止当前命令。
 - `Ctrl+Z` - 暂停当前命令，使用`fg`在前台恢复或使用`bg`在后台恢复。
@@ -163,6 +220,12 @@ rpm -Uvh <pkg.rpm>  # 安装软件包
 - `|` - 将一个命令/程序/进程的输出发送到另一个命令/程序/进程进行进一步处理。
 - `exit` - 注销当前会话。
 
+</details>
+
+---
+
+<details markdown='1'><summary>GitHub使用</summary>
+
 ### GitHub 使用
 我主要用它来下载一些脚本并保持其最新状态。
 
@@ -171,6 +234,12 @@ rpm -Uvh <pkg.rpm>  # 安装软件包
 如果你有很多本地仓库，比如在你的 Kali 机器上，并且想要保持它们全部最新，你可以使用 gitup。这个工具是用于一次性更新多个 git 仓库的。你可以在 Debian 上通过 `apt install gitup` 安装它。然后只需运行：
 
 - `gitup /opt/` - 更新位于 /opt 文件夹下的所有 GitHub 仓库。你可以按文件夹或递归方式执行。你还可以为仓库创建书签，比如 `gitup --add ~/repos` 如果你添加了很多仓库，比如 `--add ~/repos/foo ~/repos/bar ~/repos/baz`，你只需使用 `gitup` 命令来更新所有书签而无需指定每个文件夹。
+
+</details>
+
+---
+
+<details markdown='1'><summary>Python脚本的运行</summary>
 
 ### Python 脚本的运行很简单。
 
@@ -202,6 +271,12 @@ sudo update-alternatives --config python
 
 但我不建议这样做。
 
+</details>
+
+---
+
+<details markdown='1'><summary>图像转换和优化</summary>
+
 ### 图像转换和优化
 批量图像文件转换：
 
@@ -210,6 +285,12 @@ sudo update-alternatives --config python
 - `mogrify -format jpg -path ./new_folder *.png` - 将所有 png 文件转换为 jpg 文件并保存在 new_folder 中。
 - `mogrify -format jpg -resize 50% -path ./new_folder *.png` - 将所有 png 文件转换为 jpg 文件，将它们缩小50%并保存在 new_folder 中。
 - `mogrify -quality 85 -format jpg *.png && rm *.png` - 将位于同一文件夹中的所有 png 文件转换为 jpg 文件，将 jpg 文件质量更改为 85%，并在转换后删除源 png 文件。
+
+</details>
+
+---
+
+<details markdown='1'><summary>清理网站数据库日志</summary>
 
 ### 清理网站数据库日志
 
@@ -240,6 +321,12 @@ sudo update-alternatives --config python
 
 这将设置日志的过期时间为 5 天。
 
+</details>
+
+---
+
+<details markdown='1'><summary>清理日志和备份</summary>
+
 ### 清理日志和备份
 
 删除所有已压缩的日志文件：
@@ -260,3 +347,7 @@ find . -type f -name "*.bak" -exec rm -i {} \;
 ```bash
 find /home/user/backup/* -mtime +15 -exec rm {} \;
 ```
+
+</details>
+
+---
