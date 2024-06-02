@@ -1,18 +1,95 @@
-字典 = {'Bookcase 1:': '书柜 1:', 'Bookcase 2:': '书柜 2:', 'Bookcase 3:': '书柜 3:', 'Bookcase 4:': '书柜 4:', 'Bookcase 5:': '书柜 5:', 'Bookcase 6:': '书柜 6:', 'Bookcase 7:': '书柜 7:', 'Brigand 1 :': '土匪 1:', 'Brigand 2 :': '土匪 2:', 'Brigand 3 :': '土匪 3:', 'Chef 2 :': '厨师 2:', 'Dog 1 :': '狗 1:', 'Dog 2 :': '狗 2:', 'Employee 1:': '员工 1:', 'Employee 2:': '员工 2:', 'Employee 3:': '员工 3:', 'Gladiator1:': '角斗士 1:', 'Gladiator2:': '角斗士 2:', 'Guard 1 :': '守卫 1:', 'Guard 2 :': '守卫 2:', 'Guard 3 :': '守卫 3:', 'Guard 4 :': '守卫 4:', 'Guide 1 :': '向导 1:', 'Guide 2 :': '向导 2:', 'Guqard 2 :': '守卫 2:', 'Head Chef:': '主厨:', 'Healer 1 :': '治疗师 1:', 'Healer 1:': '治疗师 1:', 'Healer 2 :': '治疗师 2:', 'Healer 3 :': '治疗师 3:', 'Innkeeper1:': '旅店老板 1:', 'Innkeeper2:': '旅店老板 2:', 'Man 1 :': '男子 1:', 'Man 2 :': '男子 2:', 'Man 3 :': '男子 3:', 'Message 1 :': '信息 1:', 'Message 2 :': '信息 2:', 'Message 3 :': ' 信息 3:', 'Message 4 :': '信息 4:', 'Message 5 :': '信息 5:', 'Message 6 :': '信息 6:', 'Oarsman 1 :': '桨手 1:', 'Oarsman 2 :': '桨手 2:', 'Oarsman 3 :': '桨手 3:', 'Oarsman 4 :': '桨手 4:', 'Oarsman 5 :': '桨手 5:', 'Oarsman 6 :': '桨手 6:', 'Oarsman 7 :': '桨手 7:', 'Oarsman 8 :': '桨手 8:', 'Owner 1 :': '老板 1:', 'Owner 2 :': '老板 2:', 'Passenger1:': '乘客 1:', 'Scholar 1 :': '学者 1:', 'Scholar 2 :': '学者 2:', 'Scholar 3 :': '学者 3:', 'Shelf 1 :': '书架 1:', 'Shelf 2 :': '书架 2:', 'Shelf 3 :': '书架 3:', 'Signpost 1:': '路标 1:', 'Signpost 2:': '路标 2:', 'Soldier 1 :': '士兵 1:', 'Soldier 2 :': '士兵 2:', 'Soldier 3 :': '士兵 3:', 'Soldier 4 :': '士兵 4:', 'Stage 1 :': '舞台 1:', 'Stage 2 :': '舞台 2:', 'Stage 3 :': '舞台 3:', 'Stage 4 :': '舞台 4:', 'Stage 5 :': '舞台 5:', 'Stage 6 :': '舞台 6:', 'Thief 1 :': '小偷 1:', 'Thief 2 :': '小偷 2:', 'Tree 1 :': '树 1:', 'Tree 2 :': '树 2:', 'Tree 3 :': '树 3:', 'Wardrobe 1:': '衣柜 1:', 'Worker 1 :': '工人 1:', 'Worker 2 :': '工人 2:', 'colors:': '颜色:'}
+data = {
+    "MinorOverloadCreedanth": "克里登斯号轻微超载",
+    "CharringMountain": "查林山",
+    "FoldSpaceDrive": "折叠空间驱动",
+    "OverlordSyndat": "至高主宰辛达特",
+    "AryanReinhart": "阿里安·莱因哈特",
+    "Centerpoint": "中央点",
+    "Taltscience": "塔尔特科学",
+    "VayaconDios": "维亚康-迪奥斯",
+    "LenoxPrime": "莱诺克斯主星",
+    "Navigation": "导航",
+    "PromarFive": "普罗马五",
+    "FoldSpace": "折叠空间",
+    "SpaceFold": "空间折叠",
+    "Charring": "查林",
+    "KiosFour": "基奥斯四",
+    "Zaltules": "扎图勒斯",
+    "Harmock": "哈莫克",
+    "Harnett": "哈内特",
+    "Kiveans": "基维安斯",
+    "Lanolth": "拉诺斯",
+    "Michael": "迈克尔",
+    "Reliant": "依赖者",
+    "Tranton": "特兰顿",
+    "Zaltule": "扎图勒",
+    "Argyle": "阿戈尔",
+    "Autumn": "秋天",
+    "Bixutl": "比克斯特尔",
+    "BugOne": "错误一",
+    "Crylia": "克莉亚",
+    "Daeben": "戴本",
+    "Darthu": "达尔苏",
+    "Delton": "德尔顿",
+    "Diadem": "饰冠",
+    "Gureen": "古林",
+    "Kaluse": "卡卢斯",
+    "Keluth": "凯拉斯",
+    "Kivean": "基维安",
+    "Kleese": "克里斯",
+    "Marken": "马肯",
+    "Micene": "米塞尼",
+    "Nalton": "纳尔顿",
+    "Pradel": "普拉德尔",
+    "Raluth": "拉鲁斯",
+    "Salten": "萨尔滕",
+    "Syndat": "辛达特",
+    "Taalon": "塔隆",
+    "Tintul": "丁图尔",
+    "Betel": "贝特尔",
+    "Blair": "布莱尔",
+    "Brian": "布赖恩",
+    "Ethan": "伊桑",
+    "Human": "人类",
+    "Kales": "卡勒斯",
+    "Kivea": "基维亚",
+    "Lenox": "莱诺克斯",
+    "Mason": "梅森",
+    "Prime": "主星",
+    "Queex": "奎克斯",
+    "Sword": "剑",
+    "Vesta": "维斯塔",
+    "Xatul": "萨图尔",
+    "Bose": "博斯",
+    "Bree": "布莉",
+    "Eden": "伊甸",
+    "Kios": "基奥斯",
+    "ping": "响应时间",
+    "Ryan": "瑞恩",
+    "Talt": "塔尔特",
+    "Wade": "韦德",
+    "FTL": "超光速",
+    "HUD": "抬头显示器",
+    "KEW": "动能武器",
+    "KIA": "在行动中阵亡",
+    "LAV": "轻型机动车辆",
+    "bug": "错误",
+    "Bug": "错误"
+}
 
 # 读取文本文件
-输入文件路径 = "GoldenSun-1-GameScript2.txt"
-输出文件路径 = "GoldenSun-1-GameScript2.txt"
+input_file_path = "银河帝国战争.txt"
+output_file_path = "银河帝国战争1.txt"
 
-with open(输入文件路径, "r", encoding="utf-8") as 输入文件:
-    英语文本 = 输入文件.read()
+with open(input_file_path, "r", encoding="utf-8") as input_file:
+    english_text = input_file.read()
 
 # 替换英文单词为中文
-for 英语单词, 中文词语 in 字典.items():
-    英语文本 = 英语文本.replace(英语单词, 中文词语)
+for english_word, chinese_translation in data.items():
+    english_text = english_text.replace(english_word, chinese_translation)
 
 # 写回文件
-with open(输出文件路径, "w", encoding="utf-8") as 输出文本:
-    输出文本.write(英语文本)
+with open(output_file_path, "w", encoding="utf-8") as output_file:
+    output_file.write(english_text)
 
-print(f"替换完成，结果已保存到 {输出文件路径} 文件中。")
+print(f"替换完成，结果已保存到 {output_file_path} 文件中。")
