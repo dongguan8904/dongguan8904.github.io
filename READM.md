@@ -1,6 +1,6 @@
 # 黄金太阳之破碎封印
 
-![Golden-Sun](../_res/Golden-Sun.jpg)
+![Golden-Sun](Golden-Sun.jpg)
 
 - **原作者:** TheSinnerChrono （这是AI翻译，会有点问题）
 - **电子邮件:** desuchama@yahoo.com 
