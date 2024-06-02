@@ -1,6 +1,6 @@
-<details markdown='1'><summary>（1）linux终端批量重命名</summary>
+<details markdown='1'><summary>（1）linux用for遍历文件批量重命名</summary>
 
-# （1）linux终端批量重命名
+# （1）linux用for遍历文件批量重命名
 在Termux中，`rename`命令可能不是默认安装的。你可以尝试使用`mv`命令来实现批量重命名后缀，具体命令如下：
 
 ```bash
