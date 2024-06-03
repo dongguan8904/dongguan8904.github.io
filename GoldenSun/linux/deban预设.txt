@@ -34,8 +34,3 @@ sudo nano /etc/systemd/system.conf
 DefaultTimeoutStartSec=10s
 DefaultTimeoutStopSec=10s
 
-
-https://update.glados-config.com/clash/452170/8886cea/111899/glados.yaml
-https://v1.v2ai.top/link/Yy68F0KyCi2Ohzo39Y4jtZNup6MARmbTVLwe?clash=1
-
-
