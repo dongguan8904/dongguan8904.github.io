@@ -29,16 +29,17 @@ import subprocess
 import os
 
 # 获取当前目录下所有的APE文件
-ape_files = [f for f in os.listdir('.') if f.endswith('.ape')]
+ape文件列表 = [文件 for 文件 in os.listdir('.') if 文件.endswith('.ape')]
 
 # 循环处理每个APE文件
-for file in ape_files:
+for 文件 in ape文件列表:
     # 构建输出文件名
-    output_file = file.replace('.ape', '.mp3')
+    输出文件 = 文件.replace('.ape', '.mp3')
     # 构建ffmpeg命令
-    command = ['ffmpeg', '-i', file, '-codec:a', 'libmp3lame', '-b:a', '320k', output_file]
+    命令 = ['ffmpeg', '-i', 文件, '-codec:a', 'libmp3lame', '-b:a', '320k', 输出文件]
     # 执行命令
-    subprocess.run(command)
+    subprocess.run(命令)
+
 ```
 
 - `subprocess` 是 Python 标准库中的一个模块，它允许你在 Python 脚本中创建新的进程，连接到其输入、输出和错误管道，并且获取返回状态码。这个模块提供了多个函数来执行外部命令，比如 `subprocess.run()`，`subprocess.Popen()` 等。
