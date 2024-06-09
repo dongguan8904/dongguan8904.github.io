@@ -131,3 +131,86 @@ proot-distro restore /sdcard/debianbackup.tar.gz
 </details>
 
 ----
+
+<details markdown='1'><summary>（4）在 debian系统中文化</summary>
+
+如果 `locales-all` 包太大，你可以只生成所需的中文语言环境而不安装整个包。下面是具体步骤：
+
+1. **安装必需的包**：
+
+    ```sh
+    sudo apt update
+    sudo apt install locales
+    ```
+
+2. **配置语言环境**：
+
+    编辑 `/etc/locale.gen` 文件：
+
+    ```sh
+    sudo nano /etc/locale.gen
+    ```
+
+    找到并取消注释以下行：
+
+    ```
+    zh_CN.UTF-8 UTF-8
+    ```
+
+    保存并退出。
+
+3. **生成语言环境**：
+
+    运行以下命令生成语言环境：
+
+    ```sh
+    sudo locale-gen
+    ```
+
+4. **设置系统默认语言**：影响所有用户
+
+    编辑 `/etc/default/locale` 文件，添加或修改以下行：
+
+    ```sh
+    sudo nano /etc/default/locale
+    ```
+
+    添加以下内容：
+
+    ```sh
+    LANG="zh_CN.UTF-8"
+    LANGUAGE="zh_CN:zh"
+    LC_ALL="zh_CN.UTF-8"
+    ```
+
+5. **配置用户环境**：影响当前用户
+
+    在用户的 home 目录下编辑或创建 `.bashrc` 文件，添加以下行：
+
+    ```sh
+    nano ~/.bashrc
+    ```
+
+    添加以下内容：
+
+    ```sh
+    export LANG=zh_CN.UTF-8
+    export LANGUAGE=zh_CN:zh
+    export LC_ALL=zh_CN.UTF-8
+    ```
+
+    保存并退出后，运行以下命令立即应用更改：
+
+    ```sh
+    source ~/.bashrc
+    ```
+
+6. **重启系统或重新启动终端会话**：
+
+    完成以上步骤后，重启系统或重新启动终端会话，你的Debian终端应该能够正确显示中文了。
+
+通过这种方式，你只会生成和使用所需的语言环境，而不会安装整个 `locales-all` 包，从而节省存储空间。
+
+</details>
+
+----
