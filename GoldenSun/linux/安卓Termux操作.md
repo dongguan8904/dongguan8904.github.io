@@ -1,4 +1,3 @@
-
 <details markdown='1'><summary>（1）编辑欢迎页面及一些常用指令</summary>
 
 # （1）编辑欢迎页面及一些常用指令
@@ -97,6 +96,38 @@ proot-distro restore /sdcard/debianbackup.tar.gz
 
 - 延伸阅读
 - Backing up - Termux Wiki: https://wiki.termux.com/wiki/Backing_up_Termux
+</details>
+
+----
+
+<details markdown='1'><summary>（3）在 Termux中安装proot-distro再安装debian系统</summary>
+ 
+要在 Termux 中安装 `proot-distro`，你可以按照以下步骤进行：
+
+1. 更新 Termux 包管理器：
+    ```sh
+    pkg update
+    ```
+
+2. 安装 `proot-distro`：
+    ```sh
+    pkg install proot-distro
+    ```
+
+安装完成后，你可以使用 `proot-distro` 安装和管理不同的 Linux 发行版。例如，安装 Debian 发行版：
+
+3. 安装 Debian 发行版：
+    ```sh
+    proot-distro install debian
+    ```
+
+4. 进入 Debian 发行版环境：
+    ```sh
+    proot-distro login debian
+    ```
+
+在进入环境后，你可以像在常规的 Debian 系统上一样操作，包括使用 `apt` 列出和管理包。
+
 </details>
 
 ----
