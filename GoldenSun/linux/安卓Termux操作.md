@@ -214,3 +214,109 @@ proot-distro restore /sdcard/debianbackup.tar.gz
 </details>
 
 ----
+
+<details markdown='1'><summary>（5）Termux如何安装Debian系统</summary>
+
+# Termux如何安装Debian系统(图形界面＋中文化＋音讯＋一键启动指令稿)
+
+这篇文章介绍如何用Termux的proot-distro工具，手动建立中文化、支援PulseAudio音讯、桌面环境为XFCE4的Debian系统，不需要root权限。文末再附上一键启动的指令稿。
+
+选用Debian的好处是比Ubuntu稳定，套件格式跟Ubuntu相近，并且没有Snap干扰(需要systemd，Termux不支援)。
+
+如果您不想手动安装，请改用 社群制作的指令稿自动安装。
+
+## 前置条件
+
+要跑Debian手机需要至少4GB RAM，图形界面至少6GB。
+
+储存空间需准备10GB。
+
+我的装置：小米Poco F1, Lineage OS 20 (Android 13)
+
+安装 Termux
+
+安装 Termux X11
+
+启用GPU硬体加速Termux以virglrenderer达成GPU 3D硬体加速
+
+## 安装Debian最小档案系统
+
+这里的最小档案系统指的是proot-distro开发者提供的rootfs，没有要用debootstrap制作啦。
+
+安装Proot-distro和PulseAudio
+```bash
+pkg update
+termux-setup-storage
+pkg install proot-distro pulseaudio vim
+```
+安装Proot Debian
+```bash
+proot-distro install debian
+```
+登入Debian。--user参数表示登入指定帐户，目前是root。--shared-tmp则是将Termux的tmp目录挂载至proot内部以共享X伺服器资源。
+```bash
+proot-distro login debian --user root --shared-tmp
+```
+登入后先安装sudo、vim、Firefox浏览器
+```bash
+apt update
+apt install sudo vim firefox-esr
+```
+要退出Proot系统，请输入exit登出。
+
+## 更换Debian映射站台
+
+此为选择性步骤。更改映射站，加快套件下载速度。
+
+详细用法参考 SourcesList - Debian Wiki
+
+可用的映射站台： Debian 映射站台
+
+编辑映射站列表
+vim /etc/apt/sources.list
+将网址全部替换成台湾国网中心的网址（需注意版本代号，目前是bookworm）：
+```bash
+deb http://opensource.nchc.org.tw/debian/ bookworm main contrib non-free
+deb-src http://opensource.nchc.org.tw/debian/ bookworm main contrib non-free
+deb http://opensource.nchc.org.tw/debian/ bookworm-updates main
+deb-src http://opensource.nchc.org.tw/debian/ bookworm-updates main
+deb http://security.debian.org/debian-security bookworm/updates main contrib non-free
+deb http://opensource.nchc.org.tw/debian bookworm-backports main
+```
+更新套件列表
+```bash
+apt update
+```
+
+## 建立一般使用者
+#
+通常情况下我们不会使用root帐户操作系统，为此需要新增一般使用者帐户，并在需要变更系统时(例如执行apt指令)加上sudo指令暂时提升权限。
+
+修改root密码
+```bash
+passwd
+```
+新增wheel和video群组
+```bash
+groupadd storage
+groupadd wheel
+groupadd video
+```
+新增一般帐户"user"，并修改密码。
+```bash
+useradd -m -g users -G wheel,audio,video,storage -s /bin/bash user
+passwd user
+```
+将user加入sudo群组。执行visudo指令，找到root ALL=(ALL:ALL) ALL那一行，在下一行加入以下内容：
+```bash
+user ALL=(ALL:ALL) ALL
+```
+切换一般帐户
+```bash
+su user
+cd
+```
+
+</details>
+
+----
