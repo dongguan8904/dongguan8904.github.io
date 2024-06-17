@@ -1,4 +1,4 @@
- <details markdown='1'><summary>拨号界面输入\*#\*#4636#\*#\*里面教学</summary>
+ <details markdown='1'><summary>拨号界面输入*#*#4636#*#*里面教学</summary>
  
 # 拨号界面输入\*#\*#4636#\*#\*里面教学
 1：因为今天在设置除了fiddler还有哪些可是限制网速的，发现还是存在好多方法的
