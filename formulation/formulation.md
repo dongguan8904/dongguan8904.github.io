@@ -103,3 +103,15 @@
 |葱炸至干|
 
 </details>
+
+----
+
+<details markdown='1'><summary>黑胡椒&干辣椒&茴香</summary>
+
+- 黑胡椒&干辣椒&茴香1比1磨成粉
+    - 可腌制肉类
+    - 可煮粥
+
+</details>
+
+---
